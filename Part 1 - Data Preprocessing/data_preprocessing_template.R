@@ -31,5 +31,13 @@ training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 
 # Feature Scaling
-# training_set = scale(training_set)
-# test_set = scale(test_set)
+# factor columns should be expluced since they are nit numeric despite their appearance
+training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])
+
+#problem here: we have different scale for train and test (since they are scaled independently)
+# to have identical scale:
+# train_center <- colMeans(X_training[,1:2],  na.rm=T)
+# train_scale <- sapply(X_training[,1:2], FUN=function(col) sd(col, na.rm=T))
+# X_train[,1:2] <- scale(X_train[,1:2])
+# X_test[,1:2] <- scale(X_test[,1:2], center=train_center, scale=train_scale)
