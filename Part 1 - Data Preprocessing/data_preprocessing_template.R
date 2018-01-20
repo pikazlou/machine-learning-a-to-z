@@ -22,10 +22,11 @@ dataset$Purchased = factor(dataset$Purchased,
                            labels = c(1, 0))
 
 # Splitting the dataset into the Training set and Test set
-# install.packages('caTools')
+# you need to install library, so for the first time run this:
+#install.packages('caTools')
 library(caTools)
 set.seed(123)
-split = sample.split(dataset$DependentVariable, SplitRatio = 0.8)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 

@@ -35,10 +35,6 @@ y = LabelEncoder().fit_transform(y)
 X2 = pd.DataFrame(X)   #if array has dtype=object, you can't explore it in Variable explorer, this conversion helps
 
 
-
-
-
-
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
