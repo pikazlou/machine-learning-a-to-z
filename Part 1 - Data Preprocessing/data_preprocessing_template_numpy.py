@@ -1,4 +1,7 @@
 # Data Preprocessing Template
+# Using numpy methods here to fill N/A values and implement One-Hot encoding
+# See corresponding file for same operations using Pandas
+# comparing Numpy vs Pandas in terms of performance: http://gouthamanbalaraman.com/blog/numpy-vs-pandas-comparison.html
 
 # Importing the libraries
 import numpy as np
