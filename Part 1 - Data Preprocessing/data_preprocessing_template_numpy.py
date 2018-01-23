@@ -22,7 +22,8 @@ X[:, 1:3] = imputer.transform(X[:, 1:3]) # perform the actual replacement
 # LabelEncoder - replace values with int numbers (enumerate them)
 # problem with LabelEncoder - int numbers have order built into them, which might be unwanted side effect
 # OneHotEncoder solves the problem by using separate column for each value with values 0 or 1
-# names comes from the fact that for each row only one column will have 1 and others will have 0
+# name comes from the fact that for each row only one column will have 1 and others will have 0i
+# note that LabelEncoder must be applied before OneHotEncoder since the latter can't directly map strings into dummy variables
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelencoder_X = LabelEncoder()
 X[:, 0] = labelencoder_X.fit_transform(X[:, 0]) #fit and transform in one method
